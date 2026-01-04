@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Stack, Paper } from '@mui/material'
-import ColorBox from '../../components/CardColor'
+import ColorBox from '../../components/cardColor'
 
 const DashboardDefault: React.FC = () => {
   return (

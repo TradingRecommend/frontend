@@ -3,11 +3,12 @@ import {
   AxiosResponse,
   InternalAxiosRequestConfig,
 } from "axios";
-import { SingletonPattern } from "../pattern/SingletonPattern";
+import { SingletonPattern } from "../pattern/singletonPattern";
 import { authenStorage } from "../types/constant";
 
 // Define api data
 export type ApiResponse<T> = {
+  status: number;
   message: string;
   success: boolean;
   data: T;
@@ -80,6 +81,18 @@ export class ApiService extends SingletonPattern<ApiService>() {
       const response: AxiosResponse<ApiResponse<T>> =
         await this.requestWithRetry<T>(() =>
           this.axiosInstance.put(endpoint, data)
+        );
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  public async patch<T>(endpoint: string, data: any): Promise<ApiResponse<T>> {
+    try {
+      const response: AxiosResponse<ApiResponse<T>> =
+        await this.requestWithRetry<T>(() =>
+          this.axiosInstance.patch(endpoint, data)
         );
       return response.data;
     } catch (error) {

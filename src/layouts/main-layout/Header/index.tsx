@@ -8,7 +8,7 @@ import { Avatar, Box, ButtonBase, Typography } from "@mui/material";
 //import LogoSection from '../LogoSection';
 //import SearchSection from "./SearchSection";
 //import ProfileSection from './ProfileSection';
-import NotificationSection from "./NotificationSection";
+import NotificationSection from "./notificationSection";
 
 // assets
 import { IconMenu2 } from "@tabler/icons-react";
@@ -27,7 +27,7 @@ const Header = ({ handleLeftDrawerToggle }: HeaderProps) => {
       {/* logo & toggler button */}
       <Box
         sx={{
-          width: 228,
+          width: 330,
           display: "flex",
           alignItems: "center",
           [theme.breakpoints.down("md")]: {
@@ -44,8 +44,8 @@ const Header = ({ handleLeftDrawerToggle }: HeaderProps) => {
           }}
         >
           <img src={"/favicon.ico"} alt="" style={{ width: 45, height: 45 }} />
-          <Typography variant="h4" color={"warning.dark"} ml={0.5}>
-            TradingRecommend
+          <Typography variant="h4" color={"primary.main"} ml={0.5}>
+            Trading Recommend
           </Typography>
         </Box>
         <ButtonBase sx={{ borderRadius: "8px", overflow: "hidden" }}>

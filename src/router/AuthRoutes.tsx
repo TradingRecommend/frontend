@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import type { RouteObject } from "react-router-dom";
-import Loadable from "../components/third-party/Loadable";
+import Loadable from "../components/third-party/loadable";
 
 // render - dashboard
 const LoginPage: React.FC = Loadable(

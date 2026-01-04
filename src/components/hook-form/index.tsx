@@ -1,2 +1,2 @@
-export { default as FormProvider } from "./FormProvider";
-export { default as RHFTextField } from "./RHFTextField";
+export { default as RHFTextField } from "./rhfTextField";
+export { default as FormProvider } from "./formProvider";

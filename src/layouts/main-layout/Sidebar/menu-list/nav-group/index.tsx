@@ -2,8 +2,8 @@
 import { Divider, List, Typography } from "@mui/material";
 
 // project imports
-import NavItem from "../NavItem";
-import NavCollapse from "../NavCollapse";
+import NavItem from "../nav-item";
+import NavCollapse from "../nav-collapse";
 import { MenuType } from "../../../../../types/enum";
 import { Pages } from "../../../../../menu-items/interface/page";
 
