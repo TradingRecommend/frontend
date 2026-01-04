@@ -1,6 +1,6 @@
 import React, { lazy } from "react"
 import type { RouteObject } from "react-router-dom"
-import Loadable from "../components/third-party/Loadable"
+import Loadable from "../components/third-party/loadable"
 
 // project imports
 import MainLayout from "../layouts/main-layout"
@@ -25,14 +25,34 @@ const CapitalPlanningPage: React.FC = Loadable(
   )
 )
 
-// render - systemRedirect
-const SystemRedirectDefault: React.FC = Loadable(
+// render - companyAnalystic
+const CompanyAnalysticDefault: React.FC = Loadable(
   lazy(
     async () =>
-      await import("../pages/system-monitor/system-redirect/index").then(
-        ({ default: SystemRedirectDefault }) => ({
-          default: SystemRedirectDefault,
+      await import("../pages/analystic/company-analystic/index").then(
+        ({ default: CompanyAnalysticDefault }) => ({
+          default: CompanyAnalysticDefault,
         })
+      )
+  )
+)
+
+// render - companyAnalystic detail
+const CompanyAnalysticDetail: React.FC = Loadable(
+  lazy(
+    async () =>
+      await import("../pages/analystic/company-analystic/detail").then(
+        ({ default: CompanyAnalysticDetail }) => ({ default: CompanyAnalysticDetail })
+      )
+  )
+)
+
+// render - companyAnalystic add
+const CompanyAnalysticAdd: React.FC = Loadable(
+  lazy(
+    async () =>
+      await import("../pages/analystic/company-analystic/add").then(
+        ({ default: CompanyAnalysticAdd }) => ({ default: CompanyAnalysticAdd })
       )
   )
 )
@@ -42,11 +62,15 @@ const MainRoutes: RouteObject = {
   element: <MainLayout />,
   children: [
     {
-      path: "system-monitor",
+      path: "analystic",
       children: [
         {
-          path: "system-redirect",
-          element: <SystemRedirectDefault />,
+          path: "company-analystic",
+          children: [
+            { index: true, element: <CompanyAnalysticDefault /> },
+            { path: "new", element: <CompanyAnalysticAdd /> },
+            { path: ":symbol", element: <CompanyAnalysticDetail /> },
+          ],
         },
       ],
     },

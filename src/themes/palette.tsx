@@ -1,7 +1,7 @@
 import type { Color, PaletteMode } from '@mui/material'
 import type { PaletteColor, PaletteOptions } from '@mui/material/styles'
 import { alpha } from '@mui/material/styles'
-import { green, red, amber, grey as greyColor, cyan } from '@mui/material/colors'
+import { green, red, amber, grey as greyColor, cyan, blue } from '@mui/material/colors'
 
 // ==============================|| PRESET THEME - THEME SELECTOR ||============================== //
 
@@ -27,22 +27,22 @@ const Theme = (): PaletteOptions => {
   }
 
   const primary: PaletteColor = {
-    lighter: '#e8b0b7',
-    200: '#d77582',
-    light: '#c6394c',
-    main: '#a42f3f',
-    dark: '#9e2e3d',
-    darker: '#8a2835',
+    lighter: blue[50],
+    200: blue[200],
+    light: blue[400],
+    main: blue[600],
+    dark: blue[800],
+    darker: blue[900],
     contrastText
   }
 
   const secondary: PaletteColor = {
-    lighter: '#d8c0c0',
-    200: '#cfb0b0',
-    light: '#c5a0a1',
-    main: '#a87172',
-    dark: '#8e5758',
-    darker: '#7e4e4e',
+    lighter: cyan[50],
+    200: cyan[200],
+    light: cyan[400],
+    main: cyan[600],
+    dark: cyan[800],
+    darker: cyan[900],
     contrastText
   }
 
@@ -115,7 +115,7 @@ const Theme = (): PaletteOptions => {
     },
     background: {
       paper: '#fff',
-      default: '#FFF8F7'
+      default: '#F4F8FF'
     }
   }
 }

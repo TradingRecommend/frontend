@@ -15,8 +15,8 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { BrowserView, MobileView } from "react-device-detect";
 
 // project imports
-import MenuList from "./MenuList";
-import MenuCard from "./MenuCard";
+import MenuList from "./menu-list";
+import MenuCard from "./menu-card";
 import { drawerWidth } from "../../../types/constant";
 
 // ==============================|| SIDEBAR DRAWER ||============================== //
@@ -35,8 +35,8 @@ const Sidebar = ({ drawerOpen, drawerToggle }: SidebarProps) => {
       <Box sx={{ display: { xs: "block", md: "none" } }}>
         <Box sx={{ display: "flex", p: 2, mx: "auto", alignItems: "center" }}>
           <img src="/favicon.ico" alt="" style={{ width: 40, height: 40 }} />
-          <Typography variant="h4" color={"warning.dark"} ml={0.5}>
-            TradingRecommend
+          <Typography variant="h4" color={"primary.main"} ml={0.5}>
+            Trading Recommend
           </Typography>
         </Box>
       </Box>

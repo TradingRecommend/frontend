@@ -2,7 +2,7 @@
 import { Typography } from '@mui/material';
 
 // project imports
-import NavGroup from './NavGroup';
+import NavGroup from './nav-group';
 import menuItem from '../../../../menu-items'
 import { MenuType } from '../../../../types/enum';
 

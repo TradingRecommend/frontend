@@ -12,8 +12,8 @@ import {
 
 // project imports
 //import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
-import Header from "./Header";
-// import Sidebar from './Sidebar';
+import Header from "./header";
+// import Sidebar from './sidebar';
 // import Customization from '../Customization';
 // import navigation from 'menu-items';
 import { drawerWidth } from "../../types/constant";
@@ -23,7 +23,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { ActionSidebar } from "../../redux/action";
 
 // assets
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar";
 import { SidebarState } from "../../redux/reducers/sidebar";
 
 // styles

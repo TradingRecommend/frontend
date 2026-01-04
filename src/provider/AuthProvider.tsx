@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useAppSelector } from "../redux/hooks";
-import AuthenticateRepository, { Authen } from "../repositories/Authentication";
+import AuthenticateRepository, { Authen } from "../repositories/authentication";
 import { ApiResponse } from "../services/serviceApi";
-import AuthenServer from "../services/AuthenServer";
+import AppServer from "../services/appServer";
 
 export const AuthenticateProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -17,8 +17,8 @@ export const AuthenticateProvider: React.FC<{ children: React.ReactNode }> = ({
       AuthenticateRepository.verifyToken()
         .then((response: ApiResponse<Authen>) => {
           // Xử lý dữ liệu khi API thành công
-          AuthenServer.setAccessToken(response.data.accessToken);
-          AuthenServer.setRefreshToken(response.data.refreshToken);
+          AppServer.setAccessToken(response.data.accessToken);
+          AppServer.setRefreshToken(response.data.refreshToken);
         })
         .catch((error) => {
           throw error;

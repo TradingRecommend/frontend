@@ -1,5 +1,5 @@
-import { SingletonPattern } from "../pattern/SingletonPattern";
-import AuthenServer from "../services/AuthenServer";
+import { SingletonPattern } from "../pattern/singletonPattern";
+import AppServer from "../services/appServer";
 import { ApiResponse } from "../services/serviceApi";
 
 export interface Authen {
@@ -16,7 +16,7 @@ class AuthenticateRepository extends SingletonPattern<AuthenticateRepository>() 
   // Verify user
   async verifyToken(): Promise<ApiResponse<Authen>> {
     try {
-      const response = await AuthenServer.get<Authen, {}>("/auhenticate");
+      const response = await AppServer.get<Authen, {}>("/auhenticate");
       return response;
     } catch (error) {
       throw error;
@@ -25,18 +25,18 @@ class AuthenticateRepository extends SingletonPattern<AuthenticateRepository>() 
   // Login user
   async loginUser(data: FormDataLogin): Promise<ApiResponse<Authen>> {
     try {
-      const response = await AuthenServer.post<Authen, FormDataLogin>(
+      const response = await AppServer.post<Authen, FormDataLogin>(
         "/signin",
         data
       );
       if (response.success) {
-        AuthenServer.setAccessToken(response.data.accessToken);
-        AuthenServer.setRefreshToken(response.data.refreshToken);
+        AppServer.setAccessToken(response.data.accessToken);
+        AppServer.setRefreshToken(response.data.refreshToken);
       }
       return response;
     } catch (error) {
-      AuthenServer.setAccessToken("131313");
-      AuthenServer.setRefreshToken("4555");
+      AppServer.setAccessToken("131313");
+      AppServer.setRefreshToken("4555");
       throw error;
     }
   }
